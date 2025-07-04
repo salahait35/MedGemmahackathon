@@ -5,12 +5,21 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 import torch
 import secrets
+import os
+from huggingface_hub import login
 
 app = FastAPI()
 security = HTTPBasic()
 
 USERNAME = "admin"
 PASSWORD = "secret"
+
+# Hugging Face authentication
+hf_token = "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"
+if hf_token:
+    login(token=hf_token)
+else:
+    print("Warning: HUGGINGFACE_HUB_TOKEN not found. You may need to set it for gated models.")
 
 # Auth
 def authenticate(credentials: HTTPBasicCredentials = Depends(security)):

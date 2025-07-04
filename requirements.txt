@@ -4,3 +4,4 @@ transformers
 torch
 peft
 accelerate
+huggingface_hub
