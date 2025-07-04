@@ -15,7 +15,7 @@ USERNAME = "admin"
 PASSWORD = "secret"
 
 # Hugging Face authentication
-hf_token = "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"
+hf_token = os.getenv("HUGGINGFACE_HUB_TOKEN")
 if hf_token:
     login(token=hf_token)
 else:
