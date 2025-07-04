@@ -25,5 +25,5 @@ jobs:
         with:
           context: ./
           file: ./Dockerfile
-          tags: ghcr.io/salahait35/MedGemmahackathon:latest
+          tags: ghcr.io/salahait35/medgemmahackathon:latest
           push: true
